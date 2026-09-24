@@ -50,7 +50,8 @@ int compare(const void* a, const void* b){
 	char xy[32];
 	char yx[32];
 
-	snprintf();
+	
+	
 }
 // [ 폐기한 아이디어 ]
 // Solution
