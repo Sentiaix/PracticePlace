@@ -1,3 +1,3 @@
-# CodeUp 
+# PP
 
-백준 서비스 종료로 CodeUP 테스트 / Goorm도 테스트함
+백준 서비스 종료로 CodeUP / Goorm 테스트
