@@ -44,10 +44,17 @@
 		]
 	},
 
+	"Printf":{
+		"prefix": [""],
+		"body": [
+
+		],
+	},
+
 	"Fast Snprintf": {
 		"prefix": ["@$snp", "snp", "snprintf"],
 		"body" : [
-			"snprintf(\"${1:buffer}, ${2:size}, ${3:string}, $4\");",
+			"snprintf(${1:buffer}, ${2:size}, ${3:string}, $4);",
 			"$0"
 		],
 		"description": "Snprintf"

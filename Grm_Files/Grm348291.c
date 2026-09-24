@@ -50,8 +50,10 @@ int compare(const void* a, const void* b){
 	char xy[32];
 	char yx[32];
 
+	snprintf(xy, sizeof(xy), "%d%d", x, y);
+	snprintf(yx, sizeof(yx), "%d%d", y, x);
 	
-	
+	return strcmp(yx, xy);
 }
 // [ 폐기한 아이디어 ]
 // Solution
