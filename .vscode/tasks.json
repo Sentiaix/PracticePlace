@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build C",
+      "type": "shell",
+      "command": "gcc -g \"${file}\" -o \"${fileDirname}/${fileBasenameNoExtension}\"",
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "presentation": {
+        "reveal": "never",
+        "panel": "dedicated",
+        "close": true,
+        "showReuseMessage": false,
+        "clear": true
+      }
+    },
+    {
+      "label": "Clean Binary",
+      "type": "shell",
+      "command": "rm -f \"${fileDirname}/${fileBasenameNoExtension}\" >/dev/null 2>&1",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "never",
+        "panel": "dedicated",
+        "close": true,
+        "showReuseMessage": false,
+        "clear": true
+      }
+    }
+  ]
+}
