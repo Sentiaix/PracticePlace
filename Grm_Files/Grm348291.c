@@ -28,18 +28,30 @@ int compare(const void *a, const void *b); // qsort에 사용될 비교함수
 
 int main(){
 	int n; // 1 - 10,000
-	if (scanf("%d", &n) != 1) return;
+	if (scanf("%d", &n) != 1) return 0;
 
 	int cards[n]; // 0 - 10e8
 	for (int i = 0; i < n; i++){
 		scanf("%d", &cards[i]);
 	}
 
+	int zero_cnt = 0; // 0 세기
+	// 여기에 제로를 다 찾고 0 0 0 0 0인 케이스를 찾아서 0을 출력하도록 하기
+
+	// 합칠때 큰 순으로 정렬
 	qsort(cards, n, sizeof(int), compare);
 
-	for (int i = 0; i < n; i++){
-		
+	// qsort로 큰 순으로 정렬했음에도
+	// 가장 큰 수가 0으로 시작하는 경우를 제거.
+	if(!cards[0]){ // 10으로 나눠져서 0이면, -1뱉고 종료
+		printf("-1\n");
+		return 0;
 	}
+
+	for (int i = 0; i < n; i++){
+		printf("%d", cards[i]);
+	}
+	printf("\n");
 
 	return 0;
 }
