@@ -37,12 +37,15 @@ int main(){
 
 	qsort(cards, n, sizeof(int), compare);
 
-	
-	return;
+	for (int i = 0; i < n; i++){
+		
+	}
 
 	return 0;
 }
 
+// int를 str로 바꿔서 한글자씩 ASCII를 비교하고,
+// 누가 더 큰지 반환함
 int compare(const void* a, const void* b){
 	int x = *(const int*)a;
 	int y = *(const int*)b;
