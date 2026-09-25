@@ -9,17 +9,6 @@
 // ㄴ 첫 글자가 같으면, 다음글자 ASCII 비교 하는 방식.
 // snprintf(ab, sizeof(ab), "%s%s", str1, str2)식 정렬 가능성
 
-// -- 만약 qsort를 사용한다면.. (pivot 위치조정함수) --
-// int compare(const void *a, const void *b)
-// {
-//     int x = *(int *)a;
-//     int y = *(int *)b;
-
-//     if (x < y) return -1;
-//     if (x > y) return 1;
-//     return 0;
-// }
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -35,15 +24,17 @@ int main(){
 		scanf("%d", &cards[i]);
 	}
 
-	int zero_cnt = 0; // 0 세기
-	// 여기에 제로를 다 찾고 0 0 0 0 0인 케이스를 찾아서 0을 출력하도록 하기
-
 	// 합칠때 큰 순으로 정렬
 	qsort(cards, n, sizeof(int), compare);
 
-	// qsort로 큰 순으로 정렬했음에도
-	// 가장 큰 수가 0으로 시작하는 경우를 제거.
-	if(!cards[0]){ // 10으로 나눠져서 0이면, -1뱉고 종료
+	// n = 1이면, 0 하나로 0 만드는게 이상한 숫자는 아님. 
+	if(cards[0] == 0 && n == 1){
+		printf("0\n");
+		return 0;
+	}
+
+	if(cards[0] == 0){ // 0으로 시작함 >> 받은 값이 모두 0임
+					   // >> 0000같은 이상한 숫자 발생. >> -1
 		printf("-1\n");
 		return 0;
 	}
