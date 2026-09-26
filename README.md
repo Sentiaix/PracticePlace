@@ -1,3 +1,3 @@
-# PP
+# Practice Place
 
-백준 서비스 종료로 CodeUP / Goorm 테스트
+BOJ 종료로 CodeUP / Goorm 테스트
