@@ -1,7 +1,7 @@
 {
 	"Main Function": {
 		"scope": "c",
-		"prefix": ["@$main", "int main", "main"],
+		"prefix": ["@$main", "main()"],
 		"body": [
 			"#include <stdio.h>",
 			"",
@@ -16,7 +16,7 @@
 
 	"For loop": {
 		"scope": "c",
-		"prefix": ["for(", "@for"],
+		"prefix": ["@for", "for()"],
 		"body": [
 			"for (${1:size_t} ${2:i} = 0; ${2:i} < ${3:count}; ${2:i}++){",
 			"\t$0",
@@ -26,7 +26,7 @@
 
 	"Printf":{
 		"scope": "c",
-		"prefix": ["@printf", "printf("],
+		"prefix": ["@printf", "printf()"],
 		"body": [
 			"printf(\"${1: }\", $2);$0"
 		],
@@ -35,7 +35,7 @@
 
 	"Scanf":{
 		"scope": "c",
-		"prefix": ["@scanf", "scanf("],
+		"prefix": ["@scanf", "scanf()"],
 		"body": [
 			"scanf(\"${1: }\", ${2: });$0"
 		],
