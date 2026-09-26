@@ -2,8 +2,8 @@
 // I'm listning to"ド屑" now.
 
 #include <stdio.h>
-#include <math.h>
 #include <string.h>
+#include <stdlib.h>
 
 #define MAX_SIZE 40
 
@@ -71,16 +71,17 @@ void factorize(char* str, long long n){
 void bestM(char* str, long long n){
 	long long arr[MAX_SIZE];
 
-	if (n == 2) {
-		arr[0] = 1;
-		return;
-	}
-
 	int idx = 0; // 반환할 배열의 idx
 	long long m = 1; // min(N) == 2, min(m) == 1
 
 	// 1. 일단 2로 한자리 빼고 가득 채움.
-	while(m * 2 <= n / 2){
+	// ** 주의 **
+	// m * 2 < n / 2 로 조건문 설정하면 안 됨.
+	// n이 9고 m이 2면, 2 * 2 < 9 / 2 (=4) [ FALSE ]
+	//                 2 * 2 <= (9-1)/2   [ TRUE ]
+	// 실제로 홀수를 나눈 경우 강제로 소숫점을 버림으로써 짝수가 됨.
+	// 이 부분에서 오류가 날 수 있으니 주의
+	while(m * 2 <= (n-1) / 2){
 		m *= 2;
 		arr[idx++] = 2;
 	}
@@ -91,7 +92,7 @@ void bestM(char* str, long long n){
 		arr[idx++] = 3;
 		m *= 3;
 	}
-	else{
+	else if (m * 2 < n){
 		arr[idx++] = 2;
 		m *= 2;
 	}
@@ -121,8 +122,8 @@ void arr_to_str(long long* arr, int idx, char* str){
 }
 
 int compare(const void* a, const void* b){
-    long long x = *(const int*)a;
-    long long y = *(const int*)b;
+    long long x = *(const long long*)a;
+    long long y = *(const long long*)b;
 
     char xy[32];
     char yx[32];
@@ -133,8 +134,6 @@ int compare(const void* a, const void* b){
     return strcmp(yx, xy);
 }
 
-#include <string.h>
-
 void str_add(const char* a, const char* b, char* result)
 {
     int i = strlen(a) - 1;
@@ -142,7 +141,7 @@ void str_add(const char* a, const char* b, char* result)
     int k = 0;
     int carry = 0;
 
-    char temp[100];
+    char temp[201];
 
     while (i >= 0 || j >= 0 || carry) {
         int sum = carry;
