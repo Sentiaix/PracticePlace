@@ -13,7 +13,7 @@ int main(){
     char str[5001];
     int found[4] = {0,}; // 1 I l | 순서임.
 
-    scanf("%5000[^\n]", str); //5000글자 + 개행입력 전까지만 읽음
+    scanf("%5000[^\n]", str); // 개행문자 입력 전까지 최대 5000글자를 읽음.
     int len = strlen(str);
 
     for (int i = 0; i < len; i++){
