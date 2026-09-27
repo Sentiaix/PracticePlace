@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define INF 1000000000
+#define INF 1000000000 // 1,000,000,000
 
 // 두 값 중 작은 값을 반환
 #define min(x, y) ((x) < (y) ? (x) : (y))
@@ -173,7 +173,8 @@ int dist(int* arr, int n) {
 			}
 
 
-
+				// cost 변수명을 계속 새롭게 쓰기 위해서
+				// packaing을 함.
 				// 2. 1번 인덕션을 target으로 변경
 				// (a, b, c) -> (target, b, c)
 			{
