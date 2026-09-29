@@ -1,4 +1,5 @@
 // 자바도 해야지..
+// 시작도 안했는데 병신같은 언어임이 느껴짐
 
 public class Test{
     public static void main(String[] args){
@@ -22,4 +23,4 @@ public class Test{
     }
 }
 
-// Class의 상속 등 해야할게 주구장창
+// Class의 상속 등 공부해야함
