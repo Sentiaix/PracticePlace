@@ -2,20 +2,24 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "Run Java",
+      "request": "launch",
+      "mainClass": "${fileBasenameNoExtension}"
+    },
+    {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
-      "args": [],
+      "args": [
+        "alpha"
+      ],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "${workspaceFolder}",
-      "program": "${fileDirname}/${fileBasenameNoExtension}",
+      "cwd": "/workspaces/PracticePlace/Grm_Files/JavaTest",
+      "program": "/workspaces/PracticePlace/Grm_Files/JavaTest/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
-
-      "preLaunchTask": "Build C",
-      "postDebugTask": "Clean Binary",
-
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",
