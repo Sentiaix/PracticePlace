@@ -11,9 +11,7 @@
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
-      "args": [
-        "alpha"
-      ],
+      "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
       "cwd": "/workspaces/PracticePlace/Grm_Files/JavaTest",

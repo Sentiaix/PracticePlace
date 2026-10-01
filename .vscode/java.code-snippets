@@ -1,0 +1,28 @@
+{
+    "Main Function": {
+		"scope": "java",
+		"prefix": ["#public", "public class"],
+		"body": [
+			"import java.io.*;",
+			"",
+			"public class ${TM_FILENAME_BASE} {",
+            "\tpublic static void main(String[] args) throws Exception {",
+			"\t\tBufferedReader br = new BufferedReader(new SystemStreamReader(System.in));",
+			"\t\t",
+			"\t}",
+            "}"
+		],
+		"description": "do first"
+	},
+/* 
+	"public static": {
+		"scope": "java",
+		"prefix": ["##public", "public static"],
+		"body": [
+			"public static void main(String[] args) {",
+			"\t$0",
+			"}"
+		],
+		"description": "do second"
+	} */
+}
