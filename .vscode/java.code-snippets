@@ -7,7 +7,7 @@
 			"",
 			"public class ${TM_FILENAME_BASE} {",
             "\tpublic static void main(String[] args) throws Exception {",
-			"\t\tBufferedReader br = new BufferedReader(new SystemStreamReader(System.in));",
+			"\t\tBufferedReader br = new BufferedReader(new InputStreamReader(System.in));",
 			"\t\t",
 			"\t}",
             "}"
