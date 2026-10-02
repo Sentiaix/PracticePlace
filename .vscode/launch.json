@@ -14,10 +14,14 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/workspaces/PracticePlace/Grm_Files/JavaTest",
-      "program": "/workspaces/PracticePlace/Grm_Files/JavaTest/build/Debug/outDebug",
+      "cwd": "${workspaceFolder}",
+      "program": "${fileDirname}/${fileBasenameNoExtension}",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
+
+      "preLaunchTask": "Build C",
+      "postDebugTask": "Clean Binary",
+
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",
