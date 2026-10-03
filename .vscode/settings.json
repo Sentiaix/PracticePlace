@@ -62,5 +62,8 @@
   },
   /* ----------- JAVA -----------*/
   "java.debug.settings.enableRunDebugCodeLens": false,
-  "java.project.sourcePaths": [] // 임시로 막아뒀는데 계속 막을듯.
+  "java.project.sourcePaths": [
+    "Grm_Files/JavaTest",
+    "Grm_Files/PyTest"
+  ],
 }
