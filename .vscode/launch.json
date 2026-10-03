@@ -2,8 +2,8 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "type": "java",
       "name": "Run Java",
+      "type": "java",
       "request": "launch",
       "mainClass": "${fileBasenameNoExtension}"
     },
@@ -29,6 +29,14 @@
           "ignoreFailures": true
         }
       ]
+    },
+    {
+      "name": "Run Python",
+      "type": "debugpy",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "program": "${file}",
+      "console": "integratedTerminal",
     }
   ]
 }
