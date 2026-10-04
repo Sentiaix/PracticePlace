@@ -1,5 +1,4 @@
 {
-  /* ----------- C | CPP ------------ */
   "C_Cpp_Runner.msvcBatchPath": "",
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",
@@ -60,10 +59,10 @@
   "[c]": {
     "editor.snippetSuggestions": "top"
   },
-  /* ----------- JAVA -----------*/
   "java.debug.settings.enableRunDebugCodeLens": false,
   "java.project.sourcePaths": [
     "Grm_Files/JavaTest",
     "Grm_Files/PyTest"
   ],
+  "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx4G -Xms100m -Xlog:disable"
 }
