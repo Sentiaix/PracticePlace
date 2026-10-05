@@ -9,8 +9,8 @@
 	*/
 
     "Main Function": {
-		"scope": "java",
-		"prefix": ["#public", "public class"],
+		"scope" : "java",
+		"prefix" : ["#public", "public class"],
 		"body": [
 			"import java.io.*;",
 			"",
@@ -31,10 +31,18 @@
 		]
 	},
 	"Call_StrTokenizer": {
-		"scope": "java",
-		"prefix" : ["@StringTokenizer"],
+		"scope" : "java",
+		"prefix" : ["@StringTokenizer", "@strtokenizer"],
 		"body" : [
-			"StringTokenizer ${1:Class_Callname} = new StringTokenizer(br.readLine());",
+			"StringTokenizer ${1:st} = new StringTokenizer(br.readLine());",
+			"$0",
+		],
+	},
+	"Call_StrBuilder": {
+		"scope" : "java",
+		"prefix" : ["@StringBuilder", "@strbuilder"],
+		"body" : [
+			"StringBuilder ${1:sb} = new StringBuilder();",
 			"$0",
 		],
 	},
