@@ -46,6 +46,15 @@
 			"$0",
 		],
 	},
+	"For loop": {
+		"scope" : "java",
+		"prefix" : ["@for()", "for()"],
+		"body" : [
+			"for (${1:size_t} ${2:i} = 0; ${2:i} < ${3:count}; ${2:i}++){",
+			"\t$0",
+			"}"
+		],
+	},
 /* 
 	"public static": {
 		"scope": "java",
