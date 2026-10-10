@@ -48,5 +48,8 @@ public class Grm174760 {
         }
 
         System.out.println(e);
+
+        System.out.println("^C");
+        System.out.println(s_size + e_size); // 오류처리용
     }
 }

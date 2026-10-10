@@ -22,7 +22,7 @@
 */
 
 /*
-    DP문제 2.
+    DFS/BFS 문제
     4       
     1 2     
     0 0 1 1 
@@ -47,7 +47,6 @@ public class Grm177478 {
 
         int matrix[][] = new int[n][n];
         boolean visited[][] = new boolean[n][n];
-        visited[row - 1][col - 1] = true;
 
         for (int i = 0; i < n; i++){
             st = new StringTokenizer(br.readLine());
@@ -57,6 +56,7 @@ public class Grm177478 {
             }
         }
 
+        // target << K값 설정
         int target = matrix[row - 1][col - 1];
         int max = 0;
 
@@ -71,33 +71,48 @@ public class Grm177478 {
 
         System.out.println(max);
     }
-    static int DFS(int matrix[][], boolean visited[][], int row, int col, int k) {
-        // boolean visited[][] = new boolean[n][n];
+
+    static int DFS(int[][] matrix, boolean[][] visited,
+               int row, int col, int k) {
+
+    int[] dx = {-1, 1, 0, 0};
+    int[] dy = {0, 0, -1, 1};
+
+    ArrayDeque<int[]> stack = new ArrayDeque<>();
+
+        stack.push(new int[]{row, col});
         visited[row][col] = true;
 
-        int count = 1;
+        int size = 0;
 
-        int dx[] = {-1, 1, 0, 0};
-        int dy[] = {0, 0, -1, 1};
+        while (!stack.isEmpty()) {
 
-        for (int d = 0; d < 4; d++){
-            int nx = row + dx[d];
-            int ny = col + dy[d];
+            int[] current = stack.pop();
 
-            // 범위 밖이면 무시하기
-            if (nx < 0 || nx >= matrix.length ||
-                ny < 0 || ny >= matrix[0].length) {
+            int x = current[0];
+            int y = current[1];
+
+            size++;
+
+            for (int d = 0; d < 4; d++) {
+
+                int nx = x + dx[d];
+                int ny = y + dy[d];
+
+                if (nx < 0 || nx >= matrix.length ||
+                    ny < 0 || ny >= matrix[0].length) {
                     continue;
-            }
-            
-            // K가 아니거나 이미 방문 시 표기
-            if (matrix[nx][ny] != k || visited[nx][ny] == true) {
-                continue;
-            }
+                }
 
-            count++;
+                if (matrix[nx][ny] != k || visited[nx][ny]) {
+                    continue;
+                }
+
+                visited[nx][ny] = true;
+                stack.push(new int[]{nx, ny});
+            }
         }
-        
-        return count;
+
+        return size;
     }
 }

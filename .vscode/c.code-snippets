@@ -1,7 +1,16 @@
 {
+	/*
+					:::	Rules :::
+		'#(sharp)' 접두사를 갖는 경우는 메인 함수/큰 틀을 
+		호출할때 쓰는 경우입니다.
+
+		'@(at)' 접두사를 쓰는 경우는 함수 내에서 간단한데
+		자주쓰는 내부함수들을 호출할 때 쓰는 경우입니다.
+	*/
+
 	"Main Function": {
 		"scope": "c",
-		"prefix": ["@$main", "main()"],
+		"prefix": ["##int main", "#main()"],
 		"body": [
 			"#include <stdio.h>",
 			"",
